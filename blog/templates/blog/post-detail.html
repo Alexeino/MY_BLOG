@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Post Title
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post-detail.css' %}">
+{% endblock css_files %}
+
+
+{% block content %}
+<section id="summary">
+    <h2>{{ identified_post.title}}</h2>
+    <div class="tags">
+        {% for tag in post_tags %}
+            <span>{{tag.caption}}</span>
+        
+        {% endfor %}
+    </div>
+    <article>
+        <img src="{% static 'blog/images/'|add:identified_post.image_name %}" alt="Post Title">
+        <address> By <a href="mailto:{{identified_post.author.email_address}}">{{identified_post.author}}</a></address>
+        <div>
+            Last updated on <time>{{identified_post.date|date:"d M Y"}}</time>
+        </div>
+
+    </article>
+</section>
+    <main>
+    <p>{{identified_post.content}}</p>
+    
+    </main>
+{% endblock content %}

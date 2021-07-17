@@ -1,0 +1,13 @@
+{
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    },
+    "python.languageServer": "Pylance",
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    
+}
